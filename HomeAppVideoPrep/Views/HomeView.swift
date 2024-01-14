@@ -15,19 +15,47 @@ struct HomeView: View {
     // MARK: Computed properties
     var body: some View {
         
-        ZStack {
-            
-            LinearGradient(
-                gradient: firstGradient,
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-            
+        NavigationStack {
+
+            ZStack {
+                
+                LinearGradient(
+                    gradient: firstGradient,
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
+            }
+            .navigationTitle("My Home")
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {}, label: {
+                        Image(systemName: "waveform")
+                            .foregroundStyle(.white)
+                    })
+                }
+                ToolbarItem {
+                    Button(action: {}, label: {
+                        Image(systemName: "plus")
+                            .foregroundStyle(.white)
+                    })
+                }
+                ToolbarItem {
+                    Button(action: {}, label: {
+                        Image(systemName: "ellipsis.circle")
+                            .foregroundStyle(.white)
+
+                    })
+                }
+            }
+
         }
+        
     }
 }
 
 #Preview {
     HomeView()
+        .preferredColorScheme(.dark)
 }

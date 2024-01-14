@@ -68,7 +68,8 @@ struct HomeView: View {
                                     icon: (on: "door.garage.open", off: "door.garage.closed"),
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Open", off: "Closed"),
-                                    isOn: false
+                                    isOn: false,
+                                    isInFavourites: true
                                 )
                                 
                                 ThermostatView(
@@ -86,7 +87,8 @@ struct HomeView: View {
                                     icon: (on: "lock.open", off: "lock.fill"),
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Unlocked", off: "Locked"),
-                                    isOn: false
+                                    isOn: false,
+                                    isInFavourites: true
                                 )
 
                                 AccessoryView(
@@ -95,14 +97,79 @@ struct HomeView: View {
                                     icon: (on: "lock.open", off: "lock.fill"),
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Unlocked", off: "Locked"),
-                                    isOn: false
+                                    isOn: false,
+                                    isInFavourites: true
                                 )
                             }
                         }
                         .padding(.horizontal)
                         .padding(.bottom, 15)
 
+                        // Basement
                         SectionTitleView(title: "Basement", navigation: true)
+                        
+                        Grid {
+                            GridRow {
+                                AccessoryView(
+                                    room: "Basement",
+                                    name: "Network",
+                                    icon: (on: "poweroutlet.type.b.fill", off: "poweroutlet.type.b.fill"),
+                                    iconColor: (on: .white, off: .iconTeal),
+                                    dataToShare: (on: "On", off: "Off"),
+                                    isOn: true,
+                                    isInFavourites: false
+                                )
+                                
+                                AccessoryView(
+                                    room: "Basement",
+                                    name: "Hub",
+                                    icon: (on: "poweroutlet.type.b.fill", off: "poweroutlet.type.b.fill"),
+                                    iconColor: (on: .white, off: .iconTeal),
+                                    dataToShare: (on: "On", off: "Off"),
+                                    isOn: true,
+                                    isInFavourites: false
+                                )
+                                
+                            }
+                            
+                            GridRow {
+                                AccessoryView(
+                                    room: "Basement",
+                                    name: "Side Door",
+                                    icon: (on: "lock.open", off: "lock.fill"),
+                                    iconColor: (on: .white, off: .iconTeal),
+                                    dataToShare: (on: "Unlocked", off: "Locked"),
+                                    isOn: false,
+                                    isInFavourites: false
+                                )
+                                
+                                VStack {
+                                    
+                                    AccessoryView(
+                                        room: "Basement",
+                                        name: "Apple TV",
+                                        icon: (on: "appletv.fill", off: "appletv.fill"),
+                                        iconColor: (on: .white, off: .mediaDevice),
+                                        dataToShare: (on: "Playing", off: "Not Playing"),
+                                        isOn: false,
+                                        isInFavourites: false
+                                    )
+                                    AccessoryView(
+                                        room: "Basement",
+                                        name: "HomePod",
+                                        icon: (on: "homepodmini.fill", off: "homepodmini.fill"),
+                                        iconColor: (on: .white, off: .mediaDevice),
+                                        dataToShare: (on: "Playing", off: "Not Playing"),
+                                        isOn: false,
+                                        isInFavourites: false
+                                    )
+                                    
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom, 15)
+
                         SectionTitleView(title: "Bathroom", navigation: true)
                         SectionTitleView(title: "Garage", navigation: true)
                         SectionTitleView(title: "Hallway", navigation: true)

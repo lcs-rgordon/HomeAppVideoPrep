@@ -16,6 +16,7 @@ struct AccessoryView: View {
     let iconColor: (on: Color, off: Color)
     let dataToShare: (on: String, off: String)
     let isOn: Bool
+    let isInFavourites: Bool
     
     // MARK: Computed properties
     var body: some View {
@@ -35,12 +36,14 @@ struct AccessoryView: View {
             
             VStack(alignment: .leading, spacing: 0) {
                 
-                HStack {
-                    Text(room)
-                        .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                    Spacer()
+                if isInFavourites {
+                    HStack {
+                        Text(room)
+                            .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                        Spacer()
+                    }
                 }
                 
                 HStack {
@@ -84,7 +87,8 @@ struct AccessoryView: View {
                 icon: (on: "door.garage.open", off: "door.garage.closed"),
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "Open", off: "Closed"),
-                isOn: true
+                isOn: true,
+                isInFavourites: true
             )
 
             AccessoryView(
@@ -93,7 +97,28 @@ struct AccessoryView: View {
                 icon: (on: "door.garage.open", off: "door.garage.closed"),
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "Open", off: "Closed"),
-                isOn: false
+                isOn: true,
+                isInFavourites: false
+            )
+
+            AccessoryView(
+                room: "Garage",
+                name: "Door",
+                icon: (on: "door.garage.open", off: "door.garage.closed"),
+                iconColor: (on: .white, off: .iconTeal),
+                dataToShare: (on: "Open", off: "Closed"),
+                isOn: false,
+                isInFavourites: true
+            )
+
+            AccessoryView(
+                room: "Garage",
+                name: "Door",
+                icon: (on: "door.garage.open", off: "door.garage.closed"),
+                iconColor: (on: .white, off: .iconTeal),
+                dataToShare: (on: "Open", off: "Closed"),
+                isOn: false,
+                isInFavourites: false
             )
 
             AccessoryView(
@@ -102,7 +127,8 @@ struct AccessoryView: View {
                 icon: (on: "poweroutlet.type.b.fill", off: "poweroutlet.type.b.fill"),
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "On", off: "Off"),
-                isOn: true
+                isOn: true,
+                isInFavourites: true
             )
             
             AccessoryView(
@@ -111,7 +137,8 @@ struct AccessoryView: View {
                 icon: (on: "poweroutlet.type.b.fill", off: "poweroutlet.type.b.fill"),
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "On", off: "Off"),
-                isOn: false
+                isOn: false,
+                isInFavourites: true
             )
 
         }

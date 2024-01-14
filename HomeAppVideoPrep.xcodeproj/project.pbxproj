@@ -12,6 +12,8 @@
 		81AA855B2B542179002F5025 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AA855A2B542179002F5025 /* Preview Assets.xcassets */; };
 		81AA85632B5421AD002F5025 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA85622B5421AD002F5025 /* HomeView.swift */; };
 		81AA85652B542790002F5025 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA85642B542790002F5025 /* LandingView.swift */; };
+		81AA85672B542945002F5025 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA85662B542945002F5025 /* GradientView.swift */; };
+		81AA85692B54299E002F5025 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA85682B54299E002F5025 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		81AA855A2B542179002F5025 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		81AA85622B5421AD002F5025 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		81AA85642B542790002F5025 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		81AA85662B542945002F5025 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		81AA85682B54299E002F5025 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			children = (
 				81AA85622B5421AD002F5025 /* HomeView.swift */,
 				81AA85642B542790002F5025 /* LandingView.swift */,
+				81AA85662B542945002F5025 /* GradientView.swift */,
+				81AA85682B54299E002F5025 /* CategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,7 +156,9 @@
 			files = (
 				81AA85652B542790002F5025 /* LandingView.swift in Sources */,
 				81AA85542B542178002F5025 /* HomeAppVideoPrepApp.swift in Sources */,
+				81AA85672B542945002F5025 /* GradientView.swift in Sources */,
 				81AA85632B5421AD002F5025 /* HomeView.swift in Sources */,
+				81AA85692B54299E002F5025 /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

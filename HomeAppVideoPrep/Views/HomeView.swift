@@ -60,7 +60,7 @@ struct HomeView: View {
                         // Favourites
                         SectionTitleView(title: "Favorites", navigation: false)
                         
-                        Grid(horizontalSpacing: 12.0, verticalSpacing: 12.0) {
+                        Grid {
                             GridRow {
                                 AccessoryView(
                                     room: "Garage",
@@ -70,7 +70,8 @@ struct HomeView: View {
                                     dataToShare: (on: "Open", off: "Closed"),
                                     isOn: false,
                                     isInFavourites: true,
-                                    isLargeTile: false
+                                    isLargeTile: false,
+                                    isMediaDevice: false
                                 )
                                 
                                 ThermostatView(
@@ -90,7 +91,8 @@ struct HomeView: View {
                                     dataToShare: (on: "Unlocked", off: "Locked"),
                                     isOn: false,
                                     isInFavourites: true,
-                                    isLargeTile: false
+                                    isLargeTile: false,
+                                    isMediaDevice: false
                                 )
 
                                 AccessoryView(
@@ -101,7 +103,8 @@ struct HomeView: View {
                                     dataToShare: (on: "Unlocked", off: "Locked"),
                                     isOn: false,
                                     isInFavourites: true,
-                                    isLargeTile: false
+                                    isLargeTile: false,
+                                    isMediaDevice: false
                                 )
                             }
                         }
@@ -111,7 +114,7 @@ struct HomeView: View {
                         // Basement
                         SectionTitleView(title: "Basement", navigation: true)
                         
-                        Grid(horizontalSpacing: 12.0, verticalSpacing: 12.0) {
+                        Grid {
                             GridRow {
                                 AccessoryView(
                                     room: "Basement",
@@ -121,7 +124,8 @@ struct HomeView: View {
                                     dataToShare: (on: "On", off: "Off"),
                                     isOn: true,
                                     isInFavourites: false,
-                                    isLargeTile: false
+                                    isLargeTile: false,
+                                    isMediaDevice: false
                                 )
                                 
                                 AccessoryView(
@@ -132,7 +136,8 @@ struct HomeView: View {
                                     dataToShare: (on: "On", off: "Off"),
                                     isOn: true,
                                     isInFavourites: false,
-                                    isLargeTile: false
+                                    isLargeTile: false,
+                                    isMediaDevice: false
                                 )
                                 
                             }
@@ -146,7 +151,8 @@ struct HomeView: View {
                                     dataToShare: (on: "Unlocked", off: "Locked"),
                                     isOn: false,
                                     isInFavourites: false,
-                                    isLargeTile: true
+                                    isLargeTile: true,
+                                    isMediaDevice: false
                                 )
                                 
                                 VStack {
@@ -159,7 +165,8 @@ struct HomeView: View {
                                         dataToShare: (on: "Playing", off: "Not Playing"),
                                         isOn: false,
                                         isInFavourites: false,
-                                        isLargeTile: false
+                                        isLargeTile: false,
+                                        isMediaDevice: true
                                     )
                                     AccessoryView(
                                         room: "Basement",
@@ -169,7 +176,8 @@ struct HomeView: View {
                                         dataToShare: (on: "Playing", off: "Not Playing"),
                                         isOn: false,
                                         isInFavourites: false,
-                                        isLargeTile: false
+                                        isLargeTile: false,
+                                        isMediaDevice: true
                                     )
                                     
                                 }

@@ -18,6 +18,7 @@ struct AccessoryView: View {
     let isOn: Bool
     let isInFavourites: Bool
     let isLargeTile: Bool
+    let isMediaDevice: Bool
     
     // MARK: Computed properties
     var body: some View {
@@ -27,13 +28,13 @@ struct AccessoryView: View {
                 
                 HStack {
                     Text("\(Image(systemName: isOn ? icon.on : icon.off))")
-                        .font(.title2)
+                        .font(isMediaDevice ? .largeTitle : .title3)
                         .foregroundStyle(isOn ? iconColor.on : iconColor.off)
                         .padding(10)
                         .background(
                             Circle()
                                 .fill(isOn ? .yellow : .accessoryBlue)
-                                .opacity(1.0)
+                                .opacity(isMediaDevice ? 0.0 : 1.0)
                         )
                     .frame(width: 50)
                     
@@ -79,13 +80,13 @@ struct AccessoryView: View {
             HStack(spacing: 5) {
                 
                 Text("\(Image(systemName: isOn ? icon.on : icon.off))")
-                    .font(.title2)
+                    .font(isMediaDevice ? .largeTitle : .title3)
                     .foregroundStyle(isOn ? iconColor.on : iconColor.off)
-                    .padding(10)
+                    .padding(isMediaDevice ? 5 : 10)
                     .background(
                         Circle()
                             .fill(isOn ? .yellow : .accessoryBlue)
-                            .opacity(1.0)
+                            .opacity(isMediaDevice ? 0.0 : 1.0)
                     )
                     .frame(width: 50)
                 
@@ -147,7 +148,8 @@ struct AccessoryView: View {
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: true,
                 isInFavourites: true,
-                isLargeTile: false
+                isLargeTile: false,
+                isMediaDevice: false
             )
 
             AccessoryView(
@@ -158,7 +160,8 @@ struct AccessoryView: View {
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: true,
                 isInFavourites: false,
-                isLargeTile: false
+                isLargeTile: false,
+                isMediaDevice: false
             )
 
             AccessoryView(
@@ -169,7 +172,8 @@ struct AccessoryView: View {
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: false,
                 isInFavourites: true,
-                isLargeTile: false
+                isLargeTile: false,
+                isMediaDevice: false
             )
 
             AccessoryView(
@@ -180,7 +184,8 @@ struct AccessoryView: View {
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: false,
                 isInFavourites: false,
-                isLargeTile: false
+                isLargeTile: false,
+                isMediaDevice: false
             )
 
             AccessoryView(
@@ -191,7 +196,8 @@ struct AccessoryView: View {
                 dataToShare: (on: "On", off: "Off"),
                 isOn: true,
                 isInFavourites: true,
-                isLargeTile: false
+                isLargeTile: false,
+                isMediaDevice: false
             )
             
             AccessoryView(
@@ -202,7 +208,8 @@ struct AccessoryView: View {
                 dataToShare: (on: "On", off: "Off"),
                 isOn: false,
                 isInFavourites: true,
-                isLargeTile: false
+                isLargeTile: false,
+                isMediaDevice: false
             )
 
         }

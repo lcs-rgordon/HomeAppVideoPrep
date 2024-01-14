@@ -65,9 +65,10 @@ struct HomeView: View {
                                 AccessoryView(
                                     room: "Garage",
                                     name: "Door",
-                                    icon: "door.garage.closed",
-                                    iconColor: .iconTeal,
-                                    dataToShare: "Closed"
+                                    icon: (on: "door.garage.open", off: "door.garage.closed"),
+                                    iconColor: (on: .white, off: .iconTeal),
+                                    dataToShare: (on: "Open", off: "Closed"),
+                                    isOn: false
                                 )
                                 
                                 ThermostatView(
@@ -82,17 +83,19 @@ struct HomeView: View {
                                 AccessoryView(
                                     room: "Living Room",
                                     name: "Front Door",
-                                    icon: "lock.fill",
-                                    iconColor: .iconTeal,
-                                    dataToShare: "Locked"
+                                    icon: (on: "lock.open", off: "lock.fill"),
+                                    iconColor: (on: .white, off: .iconTeal),
+                                    dataToShare: (on: "Unlocked", off: "Locked"),
+                                    isOn: false
                                 )
 
                                 AccessoryView(
                                     room: "Basement",
                                     name: "Side Door",
-                                    icon: "lock.fill",
-                                    iconColor: .iconTeal,
-                                    dataToShare: "Locked"
+                                    icon: (on: "lock.open", off: "lock.fill"),
+                                    iconColor: (on: .white, off: .iconTeal),
+                                    dataToShare: (on: "Unlocked", off: "Locked"),
+                                    isOn: false
                                 )
                             }
                         }

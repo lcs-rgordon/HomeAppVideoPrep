@@ -12,22 +12,23 @@ struct AccessoryView: View {
     // MARK: Stored properties
     let room: String
     let name: String
-    let icon: String
-    let iconColor: Color
-    let dataToShare: String
+    let icon: (on: String, off: String)
+    let iconColor: (on: Color, off: Color)
+    let dataToShare: (on: String, off: String)
+    let isOn: Bool
     
     // MARK: Computed properties
     var body: some View {
         
         HStack(spacing: 5) {
             
-            Text("\(Image(systemName: icon))")
+            Text("\(Image(systemName: isOn ? icon.on : icon.off))")
                 .font(.title2)
-                .foregroundStyle(iconColor)
+                .foregroundStyle(isOn ? iconColor.on : iconColor.off)
                 .padding(10)
                 .background(
                     Circle()
-                        .fill(.accessoryBlue)
+                        .fill(isOn ? .yellow : .accessoryBlue)
                         .opacity(1.0)
                 )
                 .frame(width: 50)
@@ -36,22 +37,22 @@ struct AccessoryView: View {
                 
                 HStack {
                     Text(room)
-                        .foregroundStyle(.accessoryText)
+                        .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
                         .lineLimit(1)
                         .truncationMode(.tail)
                     Spacer()
                 }
-
+                
                 HStack {
                     Text(name)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(isOn ? .black : .white)
                         .bold()
                     Spacer()
                 }
                 
-                Text(dataToShare)
+                Text(isOn ? dataToShare.on : dataToShare.off)
                     .padding(.trailing, 10)
-                    .foregroundStyle(.accessoryText)
+                    .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
                 
             }
             .font(.subheadline)
@@ -59,9 +60,9 @@ struct AccessoryView: View {
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 6)
-        .background(.accessoryBlue.opacity(0.4))
+        .background(isOn ? .white.opacity(0.9) : .accessoryBlue.opacity(0.4))
         .cornerRadius(15.0)
-
+        
     }
 }
 
@@ -80,19 +81,39 @@ struct AccessoryView: View {
             AccessoryView(
                 room: "Garage",
                 name: "Door",
-                icon: "door.garage.closed",
-                iconColor: .iconTeal,
-                dataToShare: "Closed"
+                icon: (on: "door.garage.open", off: "door.garage.closed"),
+                iconColor: (on: .white, off: .iconTeal),
+                dataToShare: (on: "Open", off: "Closed"),
+                isOn: true
+            )
+
+            AccessoryView(
+                room: "Garage",
+                name: "Door",
+                icon: (on: "door.garage.open", off: "door.garage.closed"),
+                iconColor: (on: .white, off: .iconTeal),
+                dataToShare: (on: "Open", off: "Closed"),
+                isOn: false
+            )
+
+            AccessoryView(
+                room: "Basement",
+                name: "Network",
+                icon: (on: "poweroutlet.type.b.fill", off: "poweroutlet.type.b.fill"),
+                iconColor: (on: .white, off: .iconTeal),
+                dataToShare: (on: "On", off: "Off"),
+                isOn: true
             )
             
             AccessoryView(
                 room: "Basement",
                 name: "Network",
-                icon: "poweroutlet.type.b.fill",
-                iconColor: .iconTeal,
-                dataToShare: "Off"
+                icon: (on: "poweroutlet.type.b.fill", off: "poweroutlet.type.b.fill"),
+                iconColor: (on: .white, off: .iconTeal),
+                dataToShare: (on: "On", off: "Off"),
+                isOn: false
             )
-                        
+
         }
         .padding()
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8124A3A42B5435590085F764 /* AccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124A3A32B5435590085F764 /* AccessoryView.swift */; };
+		8124A3A82B5439190085F764 /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8124A3A72B5439190085F764 /* SectionTitleView.swift */; };
 		81AA85542B542178002F5025 /* HomeAppVideoPrepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA85532B542178002F5025 /* HomeAppVideoPrepApp.swift */; };
 		81AA85582B542179002F5025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AA85572B542179002F5025 /* Assets.xcassets */; };
 		81AA855B2B542179002F5025 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AA855A2B542179002F5025 /* Preview Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8124A3A32B5435590085F764 /* AccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryView.swift; sourceTree = "<group>"; };
+		8124A3A72B5439190085F764 /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
 		81AA85502B542178002F5025 /* HomeAppVideoPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAppVideoPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AA85532B542178002F5025 /* HomeAppVideoPrepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppVideoPrepApp.swift; sourceTree = "<group>"; };
 		81AA85572B542179002F5025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				81AA85642B542790002F5025 /* LandingView.swift */,
 				81AA85662B542945002F5025 /* GradientView.swift */,
 				81AA85682B54299E002F5025 /* CategoryView.swift */,
+				8124A3A32B5435590085F764 /* AccessoryView.swift */,
+				8124A3A72B5439190085F764 /* SectionTitleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,10 +161,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AA85652B542790002F5025 /* LandingView.swift in Sources */,
+				8124A3A42B5435590085F764 /* AccessoryView.swift in Sources */,
 				81AA85542B542178002F5025 /* HomeAppVideoPrepApp.swift in Sources */,
 				81AA85672B542945002F5025 /* GradientView.swift in Sources */,
 				81AA85632B5421AD002F5025 /* HomeView.swift in Sources */,
 				81AA85692B54299E002F5025 /* CategoryView.swift in Sources */,
+				8124A3A82B5439190085F764 /* SectionTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

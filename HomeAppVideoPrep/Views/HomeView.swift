@@ -56,7 +56,47 @@ struct HomeView: View {
                             
                         }
                         .padding(.top, 10)
+                        
+                        // Favourites
+                        SectionTitleView(title: "Favorites", navigation: false)
+                        
+                        Grid {
+                            GridRow {
+                                AccessoryView(
+                                    room: "Garage",
+                                    name: "Door",
+                                    icon: "door.garage.closed",
+                                    iconColor: .iconTeal,
+                                    dataToShare: "Closed"
+                                )
+                            }
+                            GridRow {
+                                AccessoryView(
+                                    room: "Living Room",
+                                    name: "Front Door",
+                                    icon: "lock.fill",
+                                    iconColor: .iconTeal,
+                                    dataToShare: "Locked"
+                                )
 
+                                AccessoryView(
+                                    room: "Basement",
+                                    name: "Side Door",
+                                    icon: "lock.fill",
+                                    iconColor: .iconTeal,
+                                    dataToShare: "Locked"
+                                )
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom, 15)
+
+                        SectionTitleView(title: "Basement", navigation: true)
+                        SectionTitleView(title: "Bathroom", navigation: true)
+                        SectionTitleView(title: "Garage", navigation: true)
+                        SectionTitleView(title: "Hallway", navigation: true)
+                        SectionTitleView(title: "Living Room", navigation: true)
+                        SectionTitleView(title: "Office", navigation: true)
                         
                     }
                     

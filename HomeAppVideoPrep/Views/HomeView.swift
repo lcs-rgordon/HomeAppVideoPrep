@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     
     // MARK: Stored properties
-    let firstGradient = Gradient(colors: [.gradientBlue, .gradientPurple, .gradientYellow])
     
     // MARK: Computed properties
     var body: some View {
@@ -18,13 +17,50 @@ struct HomeView: View {
         NavigationStack {
 
             ZStack {
+
+                // Background
+                GradientView()
                 
-                LinearGradient(
-                    gradient: firstGradient,
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
+                // Main interface
+                ScrollView {
+                    
+                    // Vertical stack of content (Categories, Favourites, Basement, et cetera)
+                    VStack(spacing: 10) {
+                        
+                        // Categories
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            
+                            HStack {
+                                CategoryView(
+                                    category: "Climate",
+                                    icon: "fan.fill",
+                                    dataToShare: "16.5-18.0°",
+                                    accentColor: .iconLightTeal
+                                )
+                                
+                                CategoryView(
+                                    category: "Security",
+                                    icon: "lock.fill",
+                                    dataToShare: "No Alerts",
+                                    accentColor: .iconDarkTeal
+                                )
+                                
+                                CategoryView(
+                                    category: "Speakers & TV",
+                                    icon: "tv.and.hifispeaker.fill",
+                                    dataToShare: "None Playing",
+                                    accentColor: .gray
+                                )
+                            }
+                            .padding(.horizontal)
+                            
+                        }
+                        .padding(.top, 10)
+
+                        
+                    }
+                    
+                }
                 
             }
             .navigationTitle("My Home")

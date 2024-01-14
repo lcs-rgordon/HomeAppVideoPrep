@@ -60,7 +60,7 @@ struct HomeView: View {
                         // Favourites
                         SectionTitleView(title: "Favorites", navigation: false)
                         
-                        Grid {
+                        Grid(horizontalSpacing: 12.0, verticalSpacing: 12.0) {
                             GridRow {
                                 AccessoryView(
                                     room: "Garage",
@@ -106,12 +106,12 @@ struct HomeView: View {
                             }
                         }
                         .padding(.horizontal)
-                        .padding(.bottom, 15)
+                        .padding(.bottom, 20)
 
                         // Basement
                         SectionTitleView(title: "Basement", navigation: true)
                         
-                        Grid {
+                        Grid(horizontalSpacing: 12.0, verticalSpacing: 12.0) {
                             GridRow {
                                 AccessoryView(
                                     room: "Basement",
@@ -176,7 +176,7 @@ struct HomeView: View {
                             }
                         }
                         .padding(.horizontal)
-                        .padding(.bottom, 15)
+                        .padding(.bottom, 20)
 
                         SectionTitleView(title: "Bathroom", navigation: true)
                         SectionTitleView(title: "Garage", navigation: true)

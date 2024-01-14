@@ -12,8 +12,8 @@ struct CategoryView: View {
     // MARK: Stored properties
     let category: String
     let icon: String
+    let iconColor: Color
     let dataToShare: String
-    let accentColor: Color
     
     // MARK: Computed properties
     var body: some View {
@@ -22,7 +22,7 @@ struct CategoryView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(height: 18)
-                .foregroundColor(accentColor)
+                .foregroundColor(iconColor)
                 
             VStack(alignment: .leading, spacing: 0) {
                 Text(category)
@@ -57,8 +57,8 @@ struct CategoryView: View {
                 CategoryView(
                     category: "Climate",
                     icon: "fan.fill",
-                    dataToShare: "16.0-20.5",
-                    accentColor: .teal
+                    iconColor: .iconBlue,
+                    dataToShare: "16.0-20.5"
                 )
                 .padding()
                 

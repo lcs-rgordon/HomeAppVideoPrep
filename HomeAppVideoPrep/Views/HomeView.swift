@@ -34,22 +34,22 @@ struct HomeView: View {
                                 CategoryView(
                                     category: "Climate",
                                     icon: "fan.fill",
-                                    dataToShare: "16.5-18.0°",
-                                    accentColor: .iconLightTeal
+                                    iconColor: .iconBlue,
+                                    dataToShare: "16.5-18.0°"
                                 )
                                 
                                 CategoryView(
                                     category: "Security",
                                     icon: "lock.fill",
-                                    dataToShare: "No Alerts",
-                                    accentColor: .iconDarkTeal
+                                    iconColor: .iconTeal,
+                                    dataToShare: "No Alerts"
                                 )
                                 
                                 CategoryView(
                                     category: "Speakers & TV",
                                     icon: "tv.and.hifispeaker.fill",
-                                    dataToShare: "None Playing",
-                                    accentColor: .gray
+                                    iconColor: .gray,
+                                    dataToShare: "None Playing"
                                 )
                             }
                             .padding(.horizontal)

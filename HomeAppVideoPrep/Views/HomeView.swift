@@ -69,6 +69,14 @@ struct HomeView: View {
                                     iconColor: .iconTeal,
                                     dataToShare: "Closed"
                                 )
+                                
+                                ThermostatView(
+                                    room: "Hallway",
+                                    name: "Nest",
+                                    currentTemperature: "17.0°",
+                                    heatingToTemperature: "Heat to 12.0°",
+                                    isOn: true
+                                )
                             }
                             GridRow {
                                 AccessoryView(

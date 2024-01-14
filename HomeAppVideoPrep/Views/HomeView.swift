@@ -69,7 +69,8 @@ struct HomeView: View {
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Open", off: "Closed"),
                                     isOn: false,
-                                    isInFavourites: true
+                                    isInFavourites: true,
+                                    isLargeTile: false
                                 )
                                 
                                 ThermostatView(
@@ -88,7 +89,8 @@ struct HomeView: View {
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Unlocked", off: "Locked"),
                                     isOn: false,
-                                    isInFavourites: true
+                                    isInFavourites: true,
+                                    isLargeTile: false
                                 )
 
                                 AccessoryView(
@@ -98,7 +100,8 @@ struct HomeView: View {
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Unlocked", off: "Locked"),
                                     isOn: false,
-                                    isInFavourites: true
+                                    isInFavourites: true,
+                                    isLargeTile: false
                                 )
                             }
                         }
@@ -117,7 +120,8 @@ struct HomeView: View {
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "On", off: "Off"),
                                     isOn: true,
-                                    isInFavourites: false
+                                    isInFavourites: false,
+                                    isLargeTile: false
                                 )
                                 
                                 AccessoryView(
@@ -127,7 +131,8 @@ struct HomeView: View {
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "On", off: "Off"),
                                     isOn: true,
-                                    isInFavourites: false
+                                    isInFavourites: false,
+                                    isLargeTile: false
                                 )
                                 
                             }
@@ -140,7 +145,8 @@ struct HomeView: View {
                                     iconColor: (on: .white, off: .iconTeal),
                                     dataToShare: (on: "Unlocked", off: "Locked"),
                                     isOn: false,
-                                    isInFavourites: false
+                                    isInFavourites: false,
+                                    isLargeTile: true
                                 )
                                 
                                 VStack {
@@ -152,7 +158,8 @@ struct HomeView: View {
                                         iconColor: (on: .white, off: .mediaDevice),
                                         dataToShare: (on: "Playing", off: "Not Playing"),
                                         isOn: false,
-                                        isInFavourites: false
+                                        isInFavourites: false,
+                                        isLargeTile: false
                                     )
                                     AccessoryView(
                                         room: "Basement",
@@ -161,7 +168,8 @@ struct HomeView: View {
                                         iconColor: (on: .white, off: .mediaDevice),
                                         dataToShare: (on: "Playing", off: "Not Playing"),
                                         isOn: false,
-                                        isInFavourites: false
+                                        isInFavourites: false,
+                                        isLargeTile: false
                                     )
                                     
                                 }

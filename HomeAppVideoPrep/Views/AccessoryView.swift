@@ -17,54 +17,112 @@ struct AccessoryView: View {
     let dataToShare: (on: String, off: String)
     let isOn: Bool
     let isInFavourites: Bool
+    let isLargeTile: Bool
     
     // MARK: Computed properties
     var body: some View {
         
-        HStack(spacing: 5) {
-            
-            Text("\(Image(systemName: isOn ? icon.on : icon.off))")
-                .font(.title2)
-                .foregroundStyle(isOn ? iconColor.on : iconColor.off)
-                .padding(10)
-                .background(
-                    Circle()
-                        .fill(isOn ? .yellow : .accessoryBlue)
-                        .opacity(1.0)
-                )
-                .frame(width: 50)
-            
-            VStack(alignment: .leading, spacing: 0) {
-                
-                if isInFavourites {
-                    HStack {
-                        Text(room)
-                            .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                        Spacer()
-                    }
-                }
+        if isLargeTile {
+            VStack(spacing: 5) {
                 
                 HStack {
-                    Text(name)
-                        .foregroundStyle(isOn ? .black : .white)
-                        .bold()
+                    Text("\(Image(systemName: isOn ? icon.on : icon.off))")
+                        .font(.title2)
+                        .foregroundStyle(isOn ? iconColor.on : iconColor.off)
+                        .padding(10)
+                        .background(
+                            Circle()
+                                .fill(isOn ? .yellow : .accessoryBlue)
+                                .opacity(1.0)
+                        )
+                    .frame(width: 50)
+                    
                     Spacer()
                 }
                 
-                Text(isOn ? dataToShare.on : dataToShare.off)
-                    .padding(.trailing, 10)
-                    .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
-                
+                VStack(alignment: .leading, spacing: 0) {
+                    
+                    if isInFavourites {
+                        HStack {
+                            Text(room)
+                                .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            Spacer()
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Text(name)
+                            .foregroundStyle(isOn ? .black : .white)
+                            .bold()
+                        Spacer()
+                    }
+                    
+                    Text(isOn ? dataToShare.on : dataToShare.off)
+                        .padding(.trailing, 10)
+                        .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
+                    
+                }
+                .font(.subheadline)
+                .fontWeight(.regular)
             }
-            .font(.subheadline)
-            .fontWeight(.regular)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 10)
+            .background(isOn ? .white.opacity(0.9) : .accessoryBlue.opacity(0.4))
+            .cornerRadius(15.0)
+
+        } else {
+            
+            HStack(spacing: 5) {
+                
+                Text("\(Image(systemName: isOn ? icon.on : icon.off))")
+                    .font(.title2)
+                    .foregroundStyle(isOn ? iconColor.on : iconColor.off)
+                    .padding(10)
+                    .background(
+                        Circle()
+                            .fill(isOn ? .yellow : .accessoryBlue)
+                            .opacity(1.0)
+                    )
+                    .frame(width: 50)
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    
+                    if isInFavourites {
+                        HStack {
+                            Text(room)
+                                .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            Spacer()
+                        }
+                    }
+                    
+                    HStack {
+                        Text(name)
+                            .foregroundStyle(isOn ? .black : .white)
+                            .bold()
+                        Spacer()
+                    }
+                    
+                    Text(isOn ? dataToShare.on : dataToShare.off)
+                        .padding(.trailing, 10)
+                        .foregroundStyle(isOn ? .accessoryTextOn : .accessoryText)
+                    
+                }
+                .font(.subheadline)
+                .fontWeight(.regular)
+            }
+            .padding(.vertical, 8)
+            .padding(.horizontal, 6)
+            .background(isOn ? .white.opacity(0.9) : .accessoryBlue.opacity(0.4))
+            .cornerRadius(15.0)
+
         }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 6)
-        .background(isOn ? .white.opacity(0.9) : .accessoryBlue.opacity(0.4))
-        .cornerRadius(15.0)
+        
         
     }
 }
@@ -88,7 +146,8 @@ struct AccessoryView: View {
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: true,
-                isInFavourites: true
+                isInFavourites: true,
+                isLargeTile: false
             )
 
             AccessoryView(
@@ -98,7 +157,8 @@ struct AccessoryView: View {
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: true,
-                isInFavourites: false
+                isInFavourites: false,
+                isLargeTile: false
             )
 
             AccessoryView(
@@ -108,7 +168,8 @@ struct AccessoryView: View {
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: false,
-                isInFavourites: true
+                isInFavourites: true,
+                isLargeTile: false
             )
 
             AccessoryView(
@@ -118,7 +179,8 @@ struct AccessoryView: View {
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "Open", off: "Closed"),
                 isOn: false,
-                isInFavourites: false
+                isInFavourites: false,
+                isLargeTile: false
             )
 
             AccessoryView(
@@ -128,7 +190,8 @@ struct AccessoryView: View {
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "On", off: "Off"),
                 isOn: true,
-                isInFavourites: true
+                isInFavourites: true,
+                isLargeTile: false
             )
             
             AccessoryView(
@@ -138,7 +201,8 @@ struct AccessoryView: View {
                 iconColor: (on: .white, off: .iconTeal),
                 dataToShare: (on: "On", off: "Off"),
                 isOn: false,
-                isInFavourites: true
+                isInFavourites: true,
+                isLargeTile: false
             )
 
         }
